@@ -1,0 +1,586 @@
+* { 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root { 
+  $primaryColor: #FFCB63;
+  $poppins: 'Poppins', sans-serif;
+
+  body {
+    overflow: hidden;
+    user-select: none;
+
+      .preloader { 
+        
+        height: 100vh;
+        background: url('./Assets/BLACKGOLD\ TOWERS\ GOLD\ 2.png') no-repeat 50% 40%;
+        background-size: 35%;
+          div:nth-child(1) { 
+            position: absolute;
+            top: 0;
+            left: 25%;
+            width: 50vw;
+            height: 50vw;
+            border: 0.1px solid rgba(255, 203, 99, 0.411);
+            border-radius: 2000px;
+            transform: scale(1.8);
+          }
+
+
+          div:nth-child(2) { 
+            position: absolute;
+            top: 15%;
+            left: 35%;
+            width: 30vw;
+            height: 30vw;
+            border: 0.1px solid rgba(255, 203, 99, 0.411);
+            border-radius: 2000px;
+            transform: scale(2.5);
+          }
+      
+          div:nth-child(3) { 
+            position: absolute;
+            top: 25%;
+            left: 40%;
+            width: 20vw;
+            height: 20vw;
+            background: url(./Assets/lineThree.svg) no-repeat center;
+            background-size: contain;
+            border-radius: 2000px;
+            animation: rollerOne 18s infinite linear;
+          }
+
+          div:nth-child(4) { 
+            position: absolute;
+            top: 35%;
+            left: 45%;
+            width: 10vw;
+            height: 10vw;
+            background: url(./Assets/lineTwo.svg) no-repeat center;
+            background-size: contain;
+            border-radius: 2000px;
+            transform: scale(4.5);
+            animation: roller 10s infinite linear;
+          }
+
+          .loaded { 
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 203, 99, 0);
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            border-radius: 2000px;
+            transform: scale(2.5);
+            transition: all 2s;
+          }
+      }
+
+      main { 
+        padding: 0 5%;
+          nav { 
+            display: grid;
+            grid-template-columns: 2fr 5fr 2fr;
+            font-family: $poppins;
+            height: 10vh;
+            align-items: center;
+            margin-bottom: 4em;
+              .logo { 
+                width: 20%;
+                height: 100%;
+                background: url('./Assets/blackgold\'sLogo.svg') no-repeat center/contain;
+              }
+              .menuItems { 
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                width: 100%;
+                  a { 
+                    display: block;
+                    text-decoration: none;
+                    color: rgba(0, 0, 0, 0.801);
+                    text-transform: uppercase;
+                    letter-spacing: 0.04;
+                    font-weight: bold;
+                    width: fit-content;
+                    opacity: 0.5;
+                    transition: all 0.4s;
+                      &:hover { 
+                        opacity: 1;
+                      }
+                  }
+                  
+                  [data-active='true'] { 
+                    color: black;
+                    font-weight: bolder;
+                    position: relative;
+                    opacity: 1;
+                      &::before { 
+                        width: 50%;
+                        height: 3px;
+                        border-radius: 20px 20px 0 0 ;
+                        background-color: $primaryColor;
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: 30%;
+                        top: 100%;
+                      }
+                  }
+              }
+              #marketMenu { 
+                color: white;
+                background-color: $primaryColor;
+                opacity: 1;
+                padding: 1em 2em 1em 4em;
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: bolder;
+                border-radius: 2000px;
+                width: 80%;
+                position: relative;
+                  &::before { 
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    top: 0%;
+                    left: 10%;
+                    width: 10%;
+                    height: 100%;
+                    background: url('./Assets/marketIcon.svg') no-repeat center/contain;
+
+                  }
+              }
+          }
+
+          .showcase { 
+            height: auto;
+            margin-bottom: 20vh;
+            font-family: $poppins;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 1em;
+              .text { 
+                h1 { 
+                  font-weight: 900;
+                  font-size: 5em;
+                  line-height: 1.2em;
+                  position: relative;
+                  width: fit-content;
+                    &::before { 
+                      content: '';
+                      width: 100%;
+                      height: 50%;
+                      display: block;
+                      background: url('./Assets/subtleDotsOne.svg') no-repeat center/contain;
+                      position: absolute;
+                      right: -30%;
+                      z-index: -3;
+                      top: 10%;
+                    }
+                }
+                .tips { 
+                  position: relative;
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  margin-top: 3em;
+                    div { 
+                      box-shadow: 0px 4px 250px 10px rgba(0, 0, 0, 0.09);
+                      width: 90%;
+                      padding: 1em 2em;
+                      position: relative;
+                        &::before { 
+                          content: '';
+                          width: 2%;
+                          height: 100%;
+                          background-color: $primaryColor;
+                          position: absolute;
+                          left: 0;
+                          top: 0;
+                          border-radius: 20px 0 0px 20px;
+                        }
+                        h3 { 
+                          text-align: right;
+                          width: 60%;
+                          font-weight: bold;
+                          font-size: 0.9em;
+                          text-transform: uppercase;
+                          position: relative;
+                          margin-bottom: 1em;
+                            &::before { 
+                              content: '';
+                              display: block;
+                              width: 40%;
+                              height: 20%;
+                              background-color: $primaryColor;
+                              position: absolute;
+                              top: 35%;
+                              border-radius: 200px;
+                            }
+                        }
+                        p { 
+                          font-size: 13px;
+                          font-weight: 400;
+                        }
+                    }
+                    div:nth-child(2) { 
+                      position: absolute;
+                      width: 50%;
+                      right: 0;
+                      top: 30%;
+                    }
+                }
+
+                a { 
+                  text-decoration: none;
+                  text-align: center;
+                  text-transform: uppercase;
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  width: 30%;
+                  gap: 0;
+                  margin-top: 20%;;
+                  align-items: center;
+                    div { 
+                      width: 60px;
+                      margin: 0 auto;
+                      height: 60px;
+                      background: $primaryColor;
+                      position: relative;
+                      border-radius: 2000px;
+                        &::after { 
+                          content: '';
+                          position: absolute;
+                          width: 100%;
+                          height: 100%;
+                          background: url('./Assets/leftArrow.svg') no-repeat 50% 10%/50%;
+                          display: block;
+                          top: 20%;
+
+                        }
+                    }
+
+                    p { 
+                      background-color: black;
+                      color: white;
+                      padding: 1em 1em;
+                      border-radius: 2000px;
+                      width: 150%;
+                      font-weight: 900;
+                      letter-spacing: 0.05em;
+                    }
+                }
+
+              }
+
+              .imgs { 
+                background: url('./Assets/triangle.svg') no-repeat;
+                background-position: top;
+                background-size: 100%;
+                height: auto;
+                  .showcaseImg { 
+                    width: 50%;
+                    height: 70%;;
+                    margin: 0 auto;
+                    background: url('./Assets/person.png') no-repeat center/contain;
+
+                  }
+              }
+          }
+
+          #gettingStarted { 
+            height: auto;
+            font-family: $poppins;
+            position: relative;
+              &::before { 
+                width: 15%;
+                height: 3%;
+                background-color: $primaryColor;
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: -3%;
+                border-radius: 20px 20px 0 0;
+              }
+              .gettingStartedTitle { 
+                margin: 2em 0;
+                  h1 { 
+                    font-size: 4em;
+                    letter-spacing: 0.06em;
+                    font-weight: 900;
+                    color: black;
+                    position: relative;
+                    width: fit-content;
+                      &::before { 
+                        content: '';
+                        width: 100%;
+                        height: 50%;
+                        display: block;
+                        background: url('./Assets/subtleDotsOne.svg') no-repeat center/contain;
+                        position: absolute;
+                        right: -30%;
+                        z-index: -3;
+                        top: 10%;
+                      }
+                  }
+                  p { 
+                    font-weight: 200;
+                    font-size: 14px;
+                    color: rgb(34, 34, 34);
+                  }
+              }
+
+              .steps { 
+                margin: 3em 0;
+                max-width: 1200px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                  #step { 
+                    background-color: white;
+                    opacity: 0.6;
+                    width: 75%;
+                    padding: 0.5em 0.9em 1em 0.9em;
+                    border-radius: 20px;
+                    border: 1px solid $primaryColor;
+                    position: relative;
+                      &:hover { 
+                        box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.02);
+                        opacity: 1;
+                      }
+                      h3 { 
+                        text-transform: uppercase;
+                        color: black;
+                        font-weight: 900;
+                        letter-spacing: 0.06em;
+                        font-size: 17px;
+                        margin-bottom: 2em;
+                      }
+                      p { 
+                        font-weight: 200;
+                        font-size: 14px;
+                        letter-spacing: 0.07em;
+                        line-height: 1.7em;
+                      }
+
+                  }
+
+                  #step:nth-child(1) { 
+                    opacity: 1;
+                    box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.02);
+                    position: relative;
+                      div { 
+                        position: absolute;
+                        background-color: $primaryColor;
+                        width: 30%;
+                        height: 20%;
+                        top: -5%;
+                        left: 0;
+                        z-index: -10;
+                      }
+                  }
+              }
+          }
+
+          #conversion { 
+            height: auto;
+            margin: 10vh 0;
+            padding: 20vh 0;
+            font-family: $poppins;
+            display: grid;
+            gap: 0em;
+            grid-template-columns: 1fr 1.5fr;
+              #conversionImg { 
+                background: url('./Assets/peeps.svg') no-repeat center/80%;
+                height: 100%;
+              }
+              .conversionText { 
+                  h3 { 
+                    font-size: 1.9em;
+                    color: #747474;
+                  }
+                  h1 { 
+                    font-size: 4em;
+                    font-weight: 900;
+                    line-height: 1em;
+                    margin: 0.4em 0 1em 0;
+                  }
+                  p { 
+                    color: #1d1d1d;
+                    line-height: 2em;
+                      a { 
+                        color: white;
+                        background-color: $primaryColor;
+                        text-decoration: none;
+                        padding: 0.3em 0.7em;
+                        display: inline-block;
+                        border-radius: 2000px;
+                      }
+                  }
+
+              }
+          }
+
+          #subscribe { 
+            background-color: $primaryColor;
+            font-family: $poppins;
+            height: auto;
+            border-radius: 30px;
+            padding: 5em 2em;
+            position: relative;
+              &::before { 
+                width: 30%;
+                height: 20%;
+                background: url(./Assets/dotsWhite.svg) no-repeat top/100%;
+                opacity: 0.3;
+                content: '';
+                display: block;
+                left: 0;
+                position: absolute;
+                top: 0;
+              }
+              .title { 
+                margin-bottom: 2em;
+                color: white;
+                  h1 { 
+                    font-size: 3em;
+                    font-weight: 900;
+                    line-height: 1.2em;
+                  }
+                  p { 
+                    font-weight: 200;
+                    width: 50%;
+                  }
+              }
+              form { 
+                width: 60%;
+                  input { 
+                    width: 40%;
+                    padding: 0.8em 1.1em;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: black;
+                    border-radius: 200px;
+                    margin-bottom: 1em;
+                    text-transform: uppercase;
+                    border: 1px solid transparent;
+                    font-family: $poppins;
+                    letter-spacing: 0.06em;
+                      &:focus { 
+                        border: 1px solid rgba(0, 0, 0, 0.404);
+                        outline: none;
+                      }
+                  }
+                  div { 
+                    display: flex;
+                    gap: 1em;
+                      input { 
+                        width: 80%;
+                      }
+                      a { 
+                        text-decoration: none;
+                        display: block;
+                        width: 50px;
+                        height: 50px;
+                        background-color: white;
+                        border-radius: 200px;
+                        position: relative;
+                        box-shadow: 0px 0px 3px 1px #80808036;
+                          &::before { 
+                            width: 30%;
+                            height: 100%;
+                            position: absolute;
+                            display: block;
+                            content: '';
+                            background: url(/Assets/checkSign.svg) no-repeat center/contain;
+                            transform: scale(1.2);
+                            left: 30%
+                          }
+                          &::after { 
+                            width: 120%;
+                            height: 120%;
+                            position: absolute;
+                            display: block;
+                            content: '';
+                            background-color: #ffffff77;
+                            left: -10%;
+                            top: -10%;
+                            border-radius: 2000px;
+                            transform: scale(1.1);
+                          }
+                      }
+                  }
+              }
+          }
+
+          footer { 
+            background-color: $primaryColor;
+            padding-top: 20vh;
+            padding-bottom: 1em;
+            padding-left: 1em;
+            padding-right: 1em;
+            margin-top: -3%;
+            height: auto;
+            align-items: baseline;
+            font-family: $poppins;
+            display: grid;
+            grid-template-columns: 2fr 1.5fr;
+              .socials { 
+                width: 50%;
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                gap: 1em;
+                  a { 
+                    color: white;
+                    text-transform: uppercase;
+                    display: block;
+                    text-align: center;
+                  }
+              }
+              p { 
+                color: white;
+                text-transform: uppercase;
+                text-align: right;
+              }
+          }
+      }
+  }
+}
+
+
+
+
+
+
+//Animations
+
+@keyframes roller { 
+  from { 
+    transform: rotate(0deg) scale(4.5);
+  }
+  to { 
+    transform: rotate(360deg) scale(4.5);
+  }
+}
+
+@keyframes rollerOne { 
+  from { 
+    transform: rotate(0deg) scale(3);
+  }
+  to { 
+    transform: rotate(360deg) scale(3);
+  }
+
+}
+
+@keyframes loadRoller { 
+  from { 
+    opacity: 1;
+  }
+  to { 
+    opacity: 1;
+  }
+}

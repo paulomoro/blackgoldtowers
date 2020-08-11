@@ -1,0 +1,698 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root body {
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+:root body .preloader {
+  height: 100vh;
+  background: url("./Assets/BLACKGOLD TOWERS GOLD 2.png") no-repeat 50% 40%;
+  background-size: 35%;
+}
+
+:root body .preloader div:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50vw;
+  height: 50vw;
+  border: 0.1px solid rgba(255, 203, 99, 0.411);
+  border-radius: 2000px;
+  -webkit-transform: scale(1.8);
+          transform: scale(1.8);
+}
+
+:root body .preloader div:nth-child(2) {
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  width: 30vw;
+  height: 30vw;
+  border: 0.1px solid rgba(255, 203, 99, 0.411);
+  border-radius: 2000px;
+  -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+}
+
+:root body .preloader div:nth-child(3) {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  width: 20vw;
+  height: 20vw;
+  background: url(./Assets/lineThree.svg) no-repeat center;
+  background-size: contain;
+  border-radius: 2000px;
+  -webkit-animation: rollerOne 18s infinite linear;
+          animation: rollerOne 18s infinite linear;
+}
+
+:root body .preloader div:nth-child(4) {
+  position: absolute;
+  top: 35%;
+  left: 45%;
+  width: 10vw;
+  height: 10vw;
+  background: url(./Assets/lineTwo.svg) no-repeat center;
+  background-size: contain;
+  border-radius: 2000px;
+  -webkit-transform: scale(4.5);
+          transform: scale(4.5);
+  -webkit-animation: roller 10s infinite linear;
+          animation: roller 10s infinite linear;
+}
+
+:root body .preloader .loaded {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 203, 99, 0);
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  border-radius: 2000px;
+  -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+:root body main {
+  padding: 0 5%;
+}
+
+:root body main nav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 5fr 2fr;
+      grid-template-columns: 2fr 5fr 2fr;
+  font-family: "Poppins", sans-serif;
+  height: 10vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 4em;
+}
+
+:root body main nav .logo {
+  width: 20%;
+  height: 100%;
+  background: url("./Assets/blackgold'sLogo.svg") no-repeat center/contain;
+}
+
+:root body main nav .menuItems {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+}
+
+:root body main nav .menuItems a {
+  display: block;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.801);
+  text-transform: uppercase;
+  letter-spacing: 0.04;
+  font-weight: bold;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  opacity: 0.5;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+:root body main nav .menuItems a:hover {
+  opacity: 1;
+}
+
+:root body main nav .menuItems [data-active='true'] {
+  color: black;
+  font-weight: bolder;
+  position: relative;
+  opacity: 1;
+}
+
+:root body main nav .menuItems [data-active='true']::before {
+  width: 50%;
+  height: 3px;
+  border-radius: 20px 20px 0 0;
+  background-color: #FFCB63;
+  content: '';
+  display: block;
+  position: absolute;
+  left: 30%;
+  top: 100%;
+}
+
+:root body main nav #marketMenu {
+  color: white;
+  background-color: #FFCB63;
+  opacity: 1;
+  padding: 1em 2em 1em 4em;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border-radius: 2000px;
+  width: 80%;
+  position: relative;
+}
+
+:root body main nav #marketMenu::before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0%;
+  left: 10%;
+  width: 10%;
+  height: 100%;
+  background: url("./Assets/marketIcon.svg") no-repeat center/contain;
+}
+
+:root body main .showcase {
+  height: auto;
+  margin-bottom: 20vh;
+  font-family: "Poppins", sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
+  gap: 1em;
+}
+
+:root body main .showcase .text h1 {
+  font-weight: 900;
+  font-size: 5em;
+  line-height: 1.2em;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+:root body main .showcase .text h1::before {
+  content: '';
+  width: 100%;
+  height: 50%;
+  display: block;
+  background: url("./Assets/subtleDotsOne.svg") no-repeat center/contain;
+  position: absolute;
+  right: -30%;
+  z-index: -3;
+  top: 10%;
+}
+
+:root body main .showcase .text .tips {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin-top: 3em;
+}
+
+:root body main .showcase .text .tips div {
+  -webkit-box-shadow: 0px 4px 250px 10px rgba(0, 0, 0, 0.09);
+          box-shadow: 0px 4px 250px 10px rgba(0, 0, 0, 0.09);
+  width: 90%;
+  padding: 1em 2em;
+  position: relative;
+}
+
+:root body main .showcase .text .tips div::before {
+  content: '';
+  width: 2%;
+  height: 100%;
+  background-color: #FFCB63;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 20px 0 0px 20px;
+}
+
+:root body main .showcase .text .tips div h3 {
+  text-align: right;
+  width: 60%;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+:root body main .showcase .text .tips div h3::before {
+  content: '';
+  display: block;
+  width: 40%;
+  height: 20%;
+  background-color: #FFCB63;
+  position: absolute;
+  top: 35%;
+  border-radius: 200px;
+}
+
+:root body main .showcase .text .tips div p {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+:root body main .showcase .text .tips div:nth-child(2) {
+  position: absolute;
+  width: 50%;
+  right: 0;
+  top: 30%;
+}
+
+:root body main .showcase .text a {
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 30%;
+  gap: 0;
+  margin-top: 20%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+:root body main .showcase .text a div {
+  width: 60px;
+  margin: 0 auto;
+  height: 60px;
+  background: #FFCB63;
+  position: relative;
+  border-radius: 2000px;
+}
+
+:root body main .showcase .text a div::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("./Assets/leftArrow.svg") no-repeat 50% 10%/50%;
+  display: block;
+  top: 20%;
+}
+
+:root body main .showcase .text a p {
+  background-color: black;
+  color: white;
+  padding: 1em 1em;
+  border-radius: 2000px;
+  width: 150%;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+:root body main .showcase .imgs {
+  background: url("./Assets/triangle.svg") no-repeat;
+  background-position: top;
+  background-size: 100%;
+  height: auto;
+}
+
+:root body main .showcase .imgs .showcaseImg {
+  width: 50%;
+  height: 70%;
+  margin: 0 auto;
+  background: url("./Assets/person.png") no-repeat center/contain;
+}
+
+:root body main #gettingStarted {
+  height: auto;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+:root body main #gettingStarted::before {
+  width: 15%;
+  height: 3%;
+  background-color: #FFCB63;
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -3%;
+  border-radius: 20px 20px 0 0;
+}
+
+:root body main #gettingStarted .gettingStartedTitle {
+  margin: 2em 0;
+}
+
+:root body main #gettingStarted .gettingStartedTitle h1 {
+  font-size: 4em;
+  letter-spacing: 0.06em;
+  font-weight: 900;
+  color: black;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+:root body main #gettingStarted .gettingStartedTitle h1::before {
+  content: '';
+  width: 100%;
+  height: 50%;
+  display: block;
+  background: url("./Assets/subtleDotsOne.svg") no-repeat center/contain;
+  position: absolute;
+  right: -30%;
+  z-index: -3;
+  top: 10%;
+}
+
+:root body main #gettingStarted .gettingStartedTitle p {
+  font-weight: 200;
+  font-size: 14px;
+  color: #222222;
+}
+
+:root body main #gettingStarted .steps {
+  margin: 3em 0;
+  max-width: 1200px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+:root body main #gettingStarted .steps #step {
+  background-color: white;
+  opacity: 0.6;
+  width: 75%;
+  padding: 0.5em 0.9em 1em 0.9em;
+  border-radius: 20px;
+  border: 1px solid #FFCB63;
+  position: relative;
+}
+
+:root body main #gettingStarted .steps #step:hover {
+  -webkit-box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.02);
+          box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.02);
+  opacity: 1;
+}
+
+:root body main #gettingStarted .steps #step h3 {
+  text-transform: uppercase;
+  color: black;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  font-size: 17px;
+  margin-bottom: 2em;
+}
+
+:root body main #gettingStarted .steps #step p {
+  font-weight: 200;
+  font-size: 14px;
+  letter-spacing: 0.07em;
+  line-height: 1.7em;
+}
+
+:root body main #gettingStarted .steps #step:nth-child(1) {
+  opacity: 1;
+  -webkit-box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.02);
+          box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+:root body main #gettingStarted .steps #step:nth-child(1) div {
+  position: absolute;
+  background-color: #FFCB63;
+  width: 30%;
+  height: 20%;
+  top: -5%;
+  left: 0;
+  z-index: -10;
+}
+
+:root body main #conversion {
+  height: auto;
+  margin: 10vh 0;
+  padding: 20vh 0;
+  font-family: "Poppins", sans-serif;
+  display: -ms-grid;
+  display: grid;
+  gap: 0em;
+  -ms-grid-columns: 1fr 1.5fr;
+      grid-template-columns: 1fr 1.5fr;
+}
+
+:root body main #conversion #conversionImg {
+  background: url("./Assets/peeps.svg") no-repeat center/80%;
+  height: 100%;
+}
+
+:root body main #conversion .conversionText h3 {
+  font-size: 1.9em;
+  color: #747474;
+}
+
+:root body main #conversion .conversionText h1 {
+  font-size: 4em;
+  font-weight: 900;
+  line-height: 1em;
+  margin: 0.4em 0 1em 0;
+}
+
+:root body main #conversion .conversionText p {
+  color: #1d1d1d;
+  line-height: 2em;
+}
+
+:root body main #conversion .conversionText p a {
+  color: white;
+  background-color: #FFCB63;
+  text-decoration: none;
+  padding: 0.3em 0.7em;
+  display: inline-block;
+  border-radius: 2000px;
+}
+
+:root body main #subscribe {
+  background-color: #FFCB63;
+  font-family: "Poppins", sans-serif;
+  height: auto;
+  border-radius: 30px;
+  padding: 5em 2em;
+  position: relative;
+}
+
+:root body main #subscribe::before {
+  width: 30%;
+  height: 20%;
+  background: url(./Assets/dotsWhite.svg) no-repeat top/100%;
+  opacity: 0.3;
+  content: '';
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+:root body main #subscribe .title {
+  margin-bottom: 2em;
+  color: white;
+}
+
+:root body main #subscribe .title h1 {
+  font-size: 3em;
+  font-weight: 900;
+  line-height: 1.2em;
+}
+
+:root body main #subscribe .title p {
+  font-weight: 200;
+  width: 50%;
+}
+
+:root body main #subscribe form {
+  width: 60%;
+}
+
+:root body main #subscribe form input {
+  width: 40%;
+  padding: 0.8em 1.1em;
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+  border-radius: 200px;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.06em;
+}
+
+:root body main #subscribe form input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.404);
+  outline: none;
+}
+
+:root body main #subscribe form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+}
+
+:root body main #subscribe form div input {
+  width: 80%;
+}
+
+:root body main #subscribe form div a {
+  text-decoration: none;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 200px;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 3px 1px #80808036;
+          box-shadow: 0px 0px 3px 1px #80808036;
+}
+
+:root body main #subscribe form div a::before {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  content: '';
+  background: url(/Assets/checkSign.svg) no-repeat center/contain;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  left: 30%;
+}
+
+:root body main #subscribe form div a::after {
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  display: block;
+  content: '';
+  background-color: #ffffff77;
+  left: -10%;
+  top: -10%;
+  border-radius: 2000px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+:root body main footer {
+  background-color: #FFCB63;
+  padding-top: 20vh;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: -3%;
+  height: auto;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  font-family: "Poppins", sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1.5fr;
+      grid-template-columns: 2fr 1.5fr;
+}
+
+:root body main footer .socials {
+  width: 50%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+
+:root body main footer .socials a {
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+}
+
+:root body main footer p {
+  color: white;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+@-webkit-keyframes roller {
+  from {
+    -webkit-transform: rotate(0deg) scale(4.5);
+            transform: rotate(0deg) scale(4.5);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(4.5);
+            transform: rotate(360deg) scale(4.5);
+  }
+}
+
+@keyframes roller {
+  from {
+    -webkit-transform: rotate(0deg) scale(4.5);
+            transform: rotate(0deg) scale(4.5);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(4.5);
+            transform: rotate(360deg) scale(4.5);
+  }
+}
+
+@-webkit-keyframes rollerOne {
+  from {
+    -webkit-transform: rotate(0deg) scale(3);
+            transform: rotate(0deg) scale(3);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(3);
+            transform: rotate(360deg) scale(3);
+  }
+}
+
+@keyframes rollerOne {
+  from {
+    -webkit-transform: rotate(0deg) scale(3);
+            transform: rotate(0deg) scale(3);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(3);
+            transform: rotate(360deg) scale(3);
+  }
+}
+
+@-webkit-keyframes loadRoller {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loadRoller {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=index.css.map */
